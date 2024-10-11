@@ -83,21 +83,21 @@ struct Login: View {
                 .foregroundStyle(.gray)
                 .hSpacing()
             HStack(spacing: 8){
-//                Button(action: {
-//                    Task {
-//                        do {
-//                            try await viewModel2.signInApple()
-//                            showSignInView = false
-//                        } catch {
-//                            print(error)
-//                        }
-//                    }
-//                }, label: {
-//                    SignInWithAppleButtonViewRepresentable(type: .default, style: .whiteOutline)
-//                        .allowsHitTesting(false)
-//
-//                })
-//                .frame(height: 40)
+                Button(action: {
+                    Task {
+                        do {
+                            try await viewModel2.signInApple()
+                            showSignInView = false
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }, label: {
+                    SignInWithAppleButtonViewRepresentable(type: .default, style: .whiteOutline)
+                        .allowsHitTesting(false)
+
+                })
+                .frame(height: 40)
                 
                 
                 GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .light, style: .icon, state: .pressed)) {
