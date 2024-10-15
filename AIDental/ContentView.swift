@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if !showSignInView {
-               
+                ScannerView(showSignInView: $showSignInView)
             }
         }
         .onAppear {
@@ -37,17 +37,17 @@ struct ContentView: View {
                         isKeyboardShowing = false
                     })
             }
-            .overlay {
-                if #available(iOS 17, *) {
-                    CircleView()
-                        .animation(.smooth(duration: 0.45, extraBounce: 0), value: showSignup)
-                        .animation(.smooth(duration: 0.45, extraBounce: 0), value: isKeyboardShowing)
-                } else {
-                    CircleView()
-                        .animation(.easeInOut(duration: 0.3), value: showSignup)
-                        .animation(.easeInOut(duration: 0.3), value: isKeyboardShowing)
-                }
-            }
+//            .overlay {
+//                if #available(iOS 17, *) {
+//                    CircleView()
+//                        .animation(.smooth(duration: 0.45, extraBounce: 0), value: showSignup)
+//                        .animation(.smooth(duration: 0.45, extraBounce: 0), value: isKeyboardShowing)
+//                } else {
+//                    CircleView()
+//                        .animation(.easeInOut(duration: 0.3), value: showSignup)
+//                        .animation(.easeInOut(duration: 0.3), value: isKeyboardShowing)
+//                }
+//            }
         }
     }
     @ViewBuilder

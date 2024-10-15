@@ -10,10 +10,22 @@
 		16A355DA2CB7EA3F00E97AB5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A355D92CB7EA3F00E97AB5 /* Utilities.swift */; };
 		16A355DC2CB7EAC600E97AB5 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A355DB2CB7EAC600E97AB5 /* ForgotPassword.swift */; };
 		16A355DE2CB7EAEB00E97AB5 /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A355DD2CB7EAEB00E97AB5 /* PasswordResetView.swift */; };
+		16A355E12CB9156000E97AB5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A355E02CB9156000E97AB5 /* ProfileView.swift */; };
+		16A355E32CB9157F00E97AB5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A355E22CB9157F00E97AB5 /* ProfileViewModel.swift */; };
+		16A355E52CB9159500E97AB5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A355E42CB9159500E97AB5 /* SettingsView.swift */; };
+		16A355E72CB915AE00E97AB5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A355E62CB915AE00E97AB5 /* SettingsViewModel.swift */; };
+		16A355E92CB916AB00E97AB5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A355E82CB916AB00E97AB5 /* StorageManager.swift */; };
+		16A355EB2CB91E0A00E97AB5 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 16A355EA2CB91E0A00E97AB5 /* FirebaseAppCheck */; };
 		16BEBC3B2C8A067900CB9170 /* AIDentalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BEBC3A2C8A067900CB9170 /* AIDentalApp.swift */; };
 		16BEBC3D2C8A067900CB9170 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BEBC3C2C8A067900CB9170 /* ContentView.swift */; };
 		16BEBC3F2C8A067C00CB9170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16BEBC3E2C8A067C00CB9170 /* Assets.xcassets */; };
 		16BEBC422C8A067C00CB9170 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16BEBC412C8A067C00CB9170 /* Preview Assets.xcassets */; };
+		16C40E292CBE363000998195 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C40E282CBE363000998195 /* ScannerView.swift */; };
+		16C40E2B2CBE364E00998195 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C40E2A2CBE364E00998195 /* ScannerViewModel.swift */; };
+		16C40E2D2CBE367A00998195 /* VideoOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C40E2C2CBE367A00998195 /* VideoOutputDelegate.swift */; };
+		16C40E2F2CBE369800998195 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C40E2E2CBE369800998195 /* ImagePicker.swift */; };
+		16C40E312CBE36EB00998195 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C40E302CBE36EB00998195 /* CameraView.swift */; };
+		16C40E332CBE376600998195 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C40E322CBE376600998195 /* ResultView.swift */; };
 		16F5AABD2CB7E2A500255DFC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 16F5AABC2CB7E2A500255DFC /* GoogleSignIn */; };
 		16F5AABF2CB7E2A500255DFC /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 16F5AABE2CB7E2A500255DFC /* GoogleSignInSwift */; };
 		16F5AAC12CB7E32400255DFC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 16F5AAC02CB7E32400255DFC /* FirebaseAnalytics */; };
@@ -60,12 +72,23 @@
 		16A355D92CB7EA3F00E97AB5 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		16A355DB2CB7EAC600E97AB5 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		16A355DD2CB7EAEB00E97AB5 /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
+		16A355E02CB9156000E97AB5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		16A355E22CB9157F00E97AB5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		16A355E42CB9159500E97AB5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		16A355E62CB915AE00E97AB5 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		16A355E82CB916AB00E97AB5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		16BEBC372C8A067900CB9170 /* AIDental.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIDental.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16BEBC3A2C8A067900CB9170 /* AIDentalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIDentalApp.swift; sourceTree = "<group>"; };
 		16BEBC3C2C8A067900CB9170 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		16BEBC3E2C8A067C00CB9170 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16BEBC412C8A067C00CB9170 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16BEBC432C8A067C00CB9170 /* AIDental.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AIDental.entitlements; sourceTree = "<group>"; };
+		16C40E282CBE363000998195 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		16C40E2A2CBE364E00998195 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		16C40E2C2CBE367A00998195 /* VideoOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoOutputDelegate.swift; sourceTree = "<group>"; };
+		16C40E2E2CBE369800998195 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		16C40E302CBE36EB00998195 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		16C40E322CBE376600998195 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		16F5AAF02CB7E37C00255DFC /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		16F5AAF22CB7E3B300255DFC /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		16F5AAF42CB7E3DA00255DFC /* CustomTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
@@ -92,6 +115,7 @@
 				16F5AACD2CB7E32400255DFC /* FirebaseAuthCombine-Community in Frameworks */,
 				16F5AABD2CB7E2A500255DFC /* GoogleSignIn in Frameworks */,
 				16F5AAEB2CB7E32400255DFC /* FirebaseStorage in Frameworks */,
+				16A355EB2CB91E0A00E97AB5 /* FirebaseAppCheck in Frameworks */,
 				16F5AAD92CB7E32400255DFC /* FirebaseFirestoreCombine-Community in Frameworks */,
 				16F5AAC52CB7E32400255DFC /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				16F5AABF2CB7E2A500255DFC /* GoogleSignInSwift in Frameworks */,
@@ -142,10 +166,17 @@
 				16F5AB002CB7E65000255DFC /* Info.plist */,
 				16BEBC3A2C8A067900CB9170 /* AIDentalApp.swift */,
 				16A355D92CB7EA3F00E97AB5 /* Utilities.swift */,
+				16C40E302CBE36EB00998195 /* CameraView.swift */,
 				16BEBC3C2C8A067900CB9170 /* ContentView.swift */,
+				16C40E322CBE376600998195 /* ResultView.swift */,
 				16F5AAF02CB7E37C00255DFC /* View+Extensions.swift */,
 				16F5AAF22CB7E3B300255DFC /* AuthenticationViewModel.swift */,
+				16A355E82CB916AB00E97AB5 /* StorageManager.swift */,
 				16F5AB052CB7E74500255DFC /* AuthenticationManager.swift */,
+				16A355E02CB9156000E97AB5 /* ProfileView.swift */,
+				16A355E22CB9157F00E97AB5 /* ProfileViewModel.swift */,
+				16A355E42CB9159500E97AB5 /* SettingsView.swift */,
+				16A355E62CB915AE00E97AB5 /* SettingsViewModel.swift */,
 				16F5AB072CB7E76C00255DFC /* UserManager.swift */,
 				16F5AB012CB7E6E500255DFC /* SignInGoogleHelper.swift */,
 				16F5AB032CB7E6FB00255DFC /* SignInAppleHelper.swift */,
@@ -158,6 +189,10 @@
 				16A355DD2CB7EAEB00E97AB5 /* PasswordResetView.swift */,
 				16F5AAFC2CB7E44400255DFC /* SignInEmailViewModel.swift */,
 				16BEBC3E2C8A067C00CB9170 /* Assets.xcassets */,
+				16C40E282CBE363000998195 /* ScannerView.swift */,
+				16C40E2A2CBE364E00998195 /* ScannerViewModel.swift */,
+				16C40E2C2CBE367A00998195 /* VideoOutputDelegate.swift */,
+				16C40E2E2CBE369800998195 /* ImagePicker.swift */,
 				16BEBC432C8A067C00CB9170 /* AIDental.entitlements */,
 				16BEBC402C8A067C00CB9170 /* Preview Content */,
 			);
@@ -252,11 +287,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
-				"$(SRCROOT)/${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
-				"$(SRCROOT)/${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
-				"$(SRCROOT)/$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
-				"$(SRCROOT)/$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
 			);
 			outputFileListPaths = (
 			);
@@ -264,7 +294,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+			shellScript = "
+
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -275,20 +307,31 @@
 			files = (
 				16F5AB022CB7E6E500255DFC /* SignInGoogleHelper.swift in Sources */,
 				16F5AAF92CB7E40F00255DFC /* SignUp.swift in Sources */,
+				16C40E332CBE376600998195 /* ResultView.swift in Sources */,
+				16C40E2F2CBE369800998195 /* ImagePicker.swift in Sources */,
 				16A355DA2CB7EA3F00E97AB5 /* Utilities.swift in Sources */,
 				16A355DE2CB7EAEB00E97AB5 /* PasswordResetView.swift in Sources */,
 				16F5AAF32CB7E3B300255DFC /* AuthenticationViewModel.swift in Sources */,
 				16F5AB082CB7E76C00255DFC /* UserManager.swift in Sources */,
 				16F5AAF72CB7E3F200255DFC /* GradientButton.swift in Sources */,
 				16BEBC3D2C8A067900CB9170 /* ContentView.swift in Sources */,
+				16A355E92CB916AB00E97AB5 /* StorageManager.swift in Sources */,
+				16C40E292CBE363000998195 /* ScannerView.swift in Sources */,
 				16F5AAF12CB7E37C00255DFC /* View+Extensions.swift in Sources */,
+				16C40E2B2CBE364E00998195 /* ScannerViewModel.swift in Sources */,
 				16F5AAFD2CB7E44400255DFC /* SignInEmailViewModel.swift in Sources */,
 				16F5AAF52CB7E3DA00255DFC /* CustomTF.swift in Sources */,
+				16C40E312CBE36EB00998195 /* CameraView.swift in Sources */,
 				16BEBC3B2C8A067900CB9170 /* AIDentalApp.swift in Sources */,
+				16C40E2D2CBE367A00998195 /* VideoOutputDelegate.swift in Sources */,
+				16A355E32CB9157F00E97AB5 /* ProfileViewModel.swift in Sources */,
+				16A355E12CB9156000E97AB5 /* ProfileView.swift in Sources */,
 				16F5AB062CB7E74500255DFC /* AuthenticationManager.swift in Sources */,
+				16A355E72CB915AE00E97AB5 /* SettingsViewModel.swift in Sources */,
 				16F5AB042CB7E6FB00255DFC /* SignInAppleHelper.swift in Sources */,
 				16F5AAFB2CB7E43100255DFC /* Login.swift in Sources */,
 				16A355DC2CB7EAC600E97AB5 /* ForgotPassword.swift in Sources */,
+				16A355E52CB9159500E97AB5 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,8 +470,10 @@
 				DEVELOPMENT_TEAM = D3QXBB2YQQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AIDental/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need accsess to your Camera to continue";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_UILaunchStoryboardName = SignIn;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -460,8 +505,10 @@
 				DEVELOPMENT_TEAM = D3QXBB2YQQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AIDental/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need accsess to your Camera to continue";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_UILaunchStoryboardName = SignIn;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -522,6 +569,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		16A355EA2CB91E0A00E97AB5 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16F5AABA2CB4EE5900255DFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
 		16F5AABC2CB7E2A500255DFC /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 16F5AABB2CB7E2A500255DFC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
