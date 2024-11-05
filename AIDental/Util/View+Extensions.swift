@@ -26,6 +26,12 @@ extension View {
             .disabled(condition)
             .opacity(condition ? 0.5 : 1)
     }
+    @ViewBuilder
+    func appColor() -> some View {
+        self
+            .foregroundColor(Color("appColor"))
+    }
+    
 }
 
 struct DeviceRotationViewModifier: ViewModifier {
@@ -43,5 +49,19 @@ struct DeviceRotationViewModifier: ViewModifier {
 extension View {
     func onRotate(perform action: @escaping (UIDeviceOrientation) -> Void) -> some View {
         self.modifier(DeviceRotationViewModifier(action: action))
+    }
+}
+
+extension Color {
+    func appColor() -> Color {
+        Color("appColor")
+    }
+}
+
+// Extension to compare CLLocationCoordinate2D values
+extension CLLocationCoordinate2D {
+    func isEqual(to coordinate: CLLocationCoordinate2D?) -> Bool {
+        guard let coordinate = coordinate else { return false }
+        return latitude == coordinate.latitude && longitude == coordinate.longitude
     }
 }

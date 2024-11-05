@@ -61,7 +61,7 @@ struct SignUp: View {
                 
                 Text("By signing up, you're agreeing to our **[Terms & Condition](https://apple.com)** and **[Privacy Policy](https://apple.com)**")
                     .font(.caption)
-                    .tint(.appPink)
+                    .tint(Color("appColor"))
                     .foregroundStyle(.gray)
                     .frame(height: 50)
                 
@@ -80,7 +80,7 @@ struct SignUp: View {
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity)
                         .frame(height: 50)
-                        .background(.appPink, in: RoundedRectangle(cornerRadius: 5))
+                        .background(.app, in: RoundedRectangle(cornerRadius: 5))
                         .foregroundStyle(.white)
                         .cornerRadius(5)
                 }
@@ -99,7 +99,7 @@ struct SignUp: View {
                     showSignup = false
                 }
                 .fontWeight(.bold)
-                .tint(.appPink)
+                .tint(.app)
             }
             .font(.callout)
             .hSpacing()

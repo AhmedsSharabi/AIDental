@@ -68,7 +68,7 @@ struct Login: View {
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity)
                         .frame(height: 50)
-                        .background(.appPink, in: RoundedRectangle(cornerRadius: 5))
+                        .background(Color(.app), in: RoundedRectangle(cornerRadius: 5))
                         .foregroundStyle(.white)
                         .cornerRadius(5)
                 }
@@ -128,7 +128,7 @@ struct Login: View {
                     showSignup.toggle()
                 }
                 .fontWeight(.bold)
-                .tint(.appPink)
+                .tint(.app)
             }
             .font(.callout)
             .hSpacing()

@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if !showSignInView {
-                ScannerView(showSignInView: $showSignInView)
+                TabbarView(showSignInView: $showSignInView)
             }
         }
         .onAppear {
@@ -53,7 +53,7 @@ struct ContentView: View {
     @ViewBuilder
     func CircleView() -> some View {
         Circle()
-            .fill(.linearGradient(colors: [.appPink, .red], startPoint: .top, endPoint: .bottom))
+            .fill(.linearGradient(colors: [.app, .red], startPoint: .top, endPoint: .bottom))
             .frame(width: 200, height: 200)
             /// Moving When the Signup Pages Loads/Dismisses
             .offset(x: showSignup ? 90 : -90, y: -90 - (isKeyboardShowing ? 200 : 0))

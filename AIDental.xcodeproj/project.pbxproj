@@ -16,6 +16,12 @@
 		16A355E72CB915AE00E97AB5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A355E62CB915AE00E97AB5 /* SettingsViewModel.swift */; };
 		16A355E92CB916AB00E97AB5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A355E82CB916AB00E97AB5 /* StorageManager.swift */; };
 		16A355EB2CB91E0A00E97AB5 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 16A355EA2CB91E0A00E97AB5 /* FirebaseAppCheck */; };
+		16B8E7F42CD8FBAF00B72C4E /* ClinicSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E7F32CD8FBAF00B72C4E /* ClinicSearchView.swift */; };
+		16B8E7F62CD92EBC00B72C4E /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E7F52CD92EBC00B72C4E /* TabbarView.swift */; };
+		16B8E7F82CDA230100B72C4E /* ClinicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E7F72CDA230100B72C4E /* ClinicView.swift */; };
+		16B8E7FA2CDA23CA00B72C4E /* ClinicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E7F92CDA23CA00B72C4E /* ClinicViewModel.swift */; };
+		16B8E7FC2CDA24BE00B72C4E /* ClinicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E7FB2CDA24BE00B72C4E /* ClinicModel.swift */; };
+		16B8E7FE2CDA27A300B72C4E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E7FD2CDA27A300B72C4E /* LocationManager.swift */; };
 		16BEBC3B2C8A067900CB9170 /* AIDentalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BEBC3A2C8A067900CB9170 /* AIDentalApp.swift */; };
 		16BEBC3D2C8A067900CB9170 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BEBC3C2C8A067900CB9170 /* ContentView.swift */; };
 		16BEBC3F2C8A067C00CB9170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16BEBC3E2C8A067C00CB9170 /* Assets.xcassets */; };
@@ -77,6 +83,12 @@
 		16A355E42CB9159500E97AB5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		16A355E62CB915AE00E97AB5 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		16A355E82CB916AB00E97AB5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		16B8E7F32CD8FBAF00B72C4E /* ClinicSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicSearchView.swift; sourceTree = "<group>"; };
+		16B8E7F52CD92EBC00B72C4E /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		16B8E7F72CDA230100B72C4E /* ClinicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicView.swift; sourceTree = "<group>"; };
+		16B8E7F92CDA23CA00B72C4E /* ClinicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicViewModel.swift; sourceTree = "<group>"; };
+		16B8E7FB2CDA24BE00B72C4E /* ClinicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicModel.swift; sourceTree = "<group>"; };
+		16B8E7FD2CDA27A300B72C4E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		16BEBC372C8A067900CB9170 /* AIDental.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIDental.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16BEBC3A2C8A067900CB9170 /* AIDentalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIDentalApp.swift; sourceTree = "<group>"; };
 		16BEBC3C2C8A067900CB9170 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -144,6 +156,129 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16B8E8012CDA289E00B72C4E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				16BEBC3C2C8A067900CB9170 /* ContentView.swift */,
+				16B8E80C2CDA2AF400B72C4E /* Result */,
+				16B8E80B2CDA2AE100B72C4E /* Tabbar */,
+				16B8E80A2CDA2AA600B72C4E /* Settings */,
+				16B8E8092CDA2A7B00B72C4E /* Profile */,
+				16B8E8082CDA2A5A00B72C4E /* Clinic */,
+				16B8E8072CDA2A2C00B72C4E /* Scanner */,
+				16B8E8022CDA28B000B72C4E /* Authentication */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		16B8E8022CDA28B000B72C4E /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				16F5AAF22CB7E3B300255DFC /* AuthenticationViewModel.swift */,
+				16F5AAFC2CB7E44400255DFC /* SignInEmailViewModel.swift */,
+				16F5AB012CB7E6E500255DFC /* SignInGoogleHelper.swift */,
+				16A355DD2CB7EAEB00E97AB5 /* PasswordResetView.swift */,
+				16F5AAF82CB7E40F00255DFC /* SignUp.swift */,
+				16F5AB032CB7E6FB00255DFC /* SignInAppleHelper.swift */,
+				16F5AAFA2CB7E43100255DFC /* Login.swift */,
+				16A355DB2CB7EAC600E97AB5 /* ForgotPassword.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		16B8E8032CDA291C00B72C4E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				16F5AAF42CB7E3DA00255DFC /* CustomTF.swift */,
+				16C40E302CBE36EB00998195 /* CameraView.swift */,
+				16F5AAF62CB7E3F200255DFC /* GradientButton.swift */,
+				16C40E2E2CBE369800998195 /* ImagePicker.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		16B8E8042CDA296000B72C4E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				16C40E2C2CBE367A00998195 /* VideoOutputDelegate.swift */,
+				16B8E7FD2CDA27A300B72C4E /* LocationManager.swift */,
+				16A355E82CB916AB00E97AB5 /* StorageManager.swift */,
+				16F5AB072CB7E76C00255DFC /* UserManager.swift */,
+				16F5AB052CB7E74500255DFC /* AuthenticationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		16B8E8052CDA29AA00B72C4E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				16F5AAF02CB7E37C00255DFC /* View+Extensions.swift */,
+				16A355D92CB7EA3F00E97AB5 /* Utilities.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		16B8E8062CDA29FA00B72C4E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				16B8E7FB2CDA24BE00B72C4E /* ClinicModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		16B8E8072CDA2A2C00B72C4E /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				16C40E2A2CBE364E00998195 /* ScannerViewModel.swift */,
+				16C40E282CBE363000998195 /* ScannerView.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		16B8E8082CDA2A5A00B72C4E /* Clinic */ = {
+			isa = PBXGroup;
+			children = (
+				16B8E7F72CDA230100B72C4E /* ClinicView.swift */,
+				16B8E7F92CDA23CA00B72C4E /* ClinicViewModel.swift */,
+				16B8E7F32CD8FBAF00B72C4E /* ClinicSearchView.swift */,
+			);
+			path = Clinic;
+			sourceTree = "<group>";
+		};
+		16B8E8092CDA2A7B00B72C4E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				16A355E22CB9157F00E97AB5 /* ProfileViewModel.swift */,
+				16A355E02CB9156000E97AB5 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		16B8E80A2CDA2AA600B72C4E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				16A355E62CB915AE00E97AB5 /* SettingsViewModel.swift */,
+				16A355E42CB9159500E97AB5 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		16B8E80B2CDA2AE100B72C4E /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				16B8E7F52CD92EBC00B72C4E /* TabbarView.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		16B8E80C2CDA2AF400B72C4E /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				16C40E322CBE376600998195 /* ResultView.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		16BEBC2E2C8A067900CB9170 = {
 			isa = PBXGroup;
 			children = (
@@ -164,35 +299,14 @@
 			isa = PBXGroup;
 			children = (
 				16F5AB002CB7E65000255DFC /* Info.plist */,
-				16BEBC3A2C8A067900CB9170 /* AIDentalApp.swift */,
-				16A355D92CB7EA3F00E97AB5 /* Utilities.swift */,
-				16C40E302CBE36EB00998195 /* CameraView.swift */,
-				16BEBC3C2C8A067900CB9170 /* ContentView.swift */,
-				16C40E322CBE376600998195 /* ResultView.swift */,
-				16F5AAF02CB7E37C00255DFC /* View+Extensions.swift */,
-				16F5AAF22CB7E3B300255DFC /* AuthenticationViewModel.swift */,
-				16A355E82CB916AB00E97AB5 /* StorageManager.swift */,
-				16F5AB052CB7E74500255DFC /* AuthenticationManager.swift */,
-				16A355E02CB9156000E97AB5 /* ProfileView.swift */,
-				16A355E22CB9157F00E97AB5 /* ProfileViewModel.swift */,
-				16A355E42CB9159500E97AB5 /* SettingsView.swift */,
-				16A355E62CB915AE00E97AB5 /* SettingsViewModel.swift */,
-				16F5AB072CB7E76C00255DFC /* UserManager.swift */,
-				16F5AB012CB7E6E500255DFC /* SignInGoogleHelper.swift */,
-				16F5AB032CB7E6FB00255DFC /* SignInAppleHelper.swift */,
-				16F5AAF42CB7E3DA00255DFC /* CustomTF.swift */,
-				16F5AAF62CB7E3F200255DFC /* GradientButton.swift */,
 				16F5AAFE2CB7E62900255DFC /* GoogleService-Info.plist */,
-				16F5AAF82CB7E40F00255DFC /* SignUp.swift */,
-				16F5AAFA2CB7E43100255DFC /* Login.swift */,
-				16A355DB2CB7EAC600E97AB5 /* ForgotPassword.swift */,
-				16A355DD2CB7EAEB00E97AB5 /* PasswordResetView.swift */,
-				16F5AAFC2CB7E44400255DFC /* SignInEmailViewModel.swift */,
+				16BEBC3A2C8A067900CB9170 /* AIDentalApp.swift */,
+				16B8E8062CDA29FA00B72C4E /* Models */,
+				16B8E8052CDA29AA00B72C4E /* Util */,
+				16B8E8042CDA296000B72C4E /* Managers */,
+				16B8E8032CDA291C00B72C4E /* Services */,
+				16B8E8012CDA289E00B72C4E /* Core */,
 				16BEBC3E2C8A067C00CB9170 /* Assets.xcassets */,
-				16C40E282CBE363000998195 /* ScannerView.swift */,
-				16C40E2A2CBE364E00998195 /* ScannerViewModel.swift */,
-				16C40E2C2CBE367A00998195 /* VideoOutputDelegate.swift */,
-				16C40E2E2CBE369800998195 /* ImagePicker.swift */,
 				16BEBC432C8A067C00CB9170 /* AIDental.entitlements */,
 				16BEBC402C8A067C00CB9170 /* Preview Content */,
 			);
@@ -309,6 +423,8 @@
 				16F5AAF92CB7E40F00255DFC /* SignUp.swift in Sources */,
 				16C40E332CBE376600998195 /* ResultView.swift in Sources */,
 				16C40E2F2CBE369800998195 /* ImagePicker.swift in Sources */,
+				16B8E7F82CDA230100B72C4E /* ClinicView.swift in Sources */,
+				16B8E7F42CD8FBAF00B72C4E /* ClinicSearchView.swift in Sources */,
 				16A355DA2CB7EA3F00E97AB5 /* Utilities.swift in Sources */,
 				16A355DE2CB7EAEB00E97AB5 /* PasswordResetView.swift in Sources */,
 				16F5AAF32CB7E3B300255DFC /* AuthenticationViewModel.swift in Sources */,
@@ -317,10 +433,14 @@
 				16BEBC3D2C8A067900CB9170 /* ContentView.swift in Sources */,
 				16A355E92CB916AB00E97AB5 /* StorageManager.swift in Sources */,
 				16C40E292CBE363000998195 /* ScannerView.swift in Sources */,
+				16B8E7FE2CDA27A300B72C4E /* LocationManager.swift in Sources */,
 				16F5AAF12CB7E37C00255DFC /* View+Extensions.swift in Sources */,
+				16B8E7FC2CDA24BE00B72C4E /* ClinicModel.swift in Sources */,
+				16B8E7FA2CDA23CA00B72C4E /* ClinicViewModel.swift in Sources */,
 				16C40E2B2CBE364E00998195 /* ScannerViewModel.swift in Sources */,
 				16F5AAFD2CB7E44400255DFC /* SignInEmailViewModel.swift in Sources */,
 				16F5AAF52CB7E3DA00255DFC /* CustomTF.swift in Sources */,
+				16B8E7F62CD92EBC00B72C4E /* TabbarView.swift in Sources */,
 				16C40E312CBE36EB00998195 /* CameraView.swift in Sources */,
 				16BEBC3B2C8A067900CB9170 /* AIDentalApp.swift in Sources */,
 				16C40E2D2CBE367A00998195 /* VideoOutputDelegate.swift in Sources */,
@@ -475,6 +595,7 @@
 				INFOPLIST_FILE = AIDental/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need accsess to your Camera to continue";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"We need access to your location to continue\"";
 				INFOPLIST_KEY_UILaunchStoryboardName = SignIn;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -510,6 +631,7 @@
 				INFOPLIST_FILE = AIDental/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need accsess to your Camera to continue";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"We need access to your location to continue\"";
 				INFOPLIST_KEY_UILaunchStoryboardName = SignIn;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
