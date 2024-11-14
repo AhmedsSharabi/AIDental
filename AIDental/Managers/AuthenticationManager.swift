@@ -78,8 +78,11 @@ final class AuthenticationManager {
 extension AuthenticationManager {
     
     @discardableResult
-    func createUser(email: String, password: String) async throws -> AuthDataResultModel {
+    func createUser(email: String, password: String, displayName: String) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
+        let changeRequest = authDataResult.user.createProfileChangeRequest()
+        changeRequest.displayName = displayName
+        try await changeRequest.commitChanges()
         return AuthDataResultModel(user: authDataResult.user)
     }
     
@@ -91,6 +94,16 @@ extension AuthenticationManager {
     
     func resetPassword(email: String) async throws {
         try await Auth.auth().sendPasswordReset(withEmail: email)
+    }
+    
+    func updateDisplayName(displayName: String) async throws {
+        guard let user = Auth.auth().currentUser else {
+            throw URLError(.badServerResponse)
+        }
+        
+        let changeRequest = user.createProfileChangeRequest()
+        changeRequest.displayName = displayName
+        try await changeRequest.commitChanges()
     }
     
     func updatePassword(password: String) async throws {

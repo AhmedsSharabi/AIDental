@@ -18,33 +18,6 @@ final class ProfileViewModel: ObservableObject {
         self.user = try await UserManager.shared.getUser(userId: authDataResult.uid)
     }
     
-    func togglePremiumStatus() {
-        guard let user else { return }
-        let currentValue = user.isPremium ?? false
-        Task {
-            try await UserManager.shared.updateUserPremiumStatus(userId: user.userId, isPremium: !currentValue)
-            self.user = try await UserManager.shared.getUser(userId: user.userId)
-        }
-    }
-    
-    func addUserPreference(text: String) {
-        guard let user else { return }
-        
-        Task {
-            try await UserManager.shared.addUserPreference(userId: user.userId, preference: text)
-            self.user = try await UserManager.shared.getUser(userId: user.userId)
-        }
-    }
-    
-    func removeUserPreference(text: String) {
-        guard let user else { return }
-        
-        Task {
-            try await UserManager.shared.removeUserPreference(userId: user.userId, preference: text)
-            self.user = try await UserManager.shared.getUser(userId: user.userId)
-        }
-    }
-    
     func saveProfileImage(item: PhotosPickerItem) {
         guard let user else { return }
 

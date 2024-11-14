@@ -9,13 +9,9 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
-import SwiftUI
-import MapKit
-import CoreLocation
 
 struct ClinicSearchView: View {
     @StateObject private var locationManager = LocationManager()
-    @State private var clinics = [Clinic]()
     @State private var selectedClinicCoordinate: CLLocationCoordinate2D?
     @StateObject var viewModel = ClinicViewModel()
     
@@ -26,7 +22,7 @@ struct ClinicSearchView: View {
                 Map(coordinateRegion: .constant(MKCoordinateRegion(
                     center: selectedClinicCoordinate ?? userLocation.coordinate,
                     span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))),
-                    annotationItems: clinics) { clinic in
+                    annotationItems: viewModel.clinics) { clinic in
                     MapMarker(coordinate: clinic.mapItem.placemark.coordinate, tint: .blue)
                 }
                     .edgesIgnoringSafeArea(.top)
@@ -39,9 +35,9 @@ struct ClinicSearchView: View {
             VStack {
                 Spacer()
                 // Swiping Cards
-                if !clinics.isEmpty {
+                if !viewModel.clinics.isEmpty {
                     TabView {
-                        ForEach(clinics) { clinic in
+                        ForEach(viewModel.clinics) { clinic in
                             VStack {
                                 Text(clinic.mapItem.name ?? "Unknown Clinic")
                                     .font(.headline)

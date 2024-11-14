@@ -12,6 +12,7 @@ final class SignInEmailViewModel: ObservableObject {
     
     @Published var email = ""
     @Published var password = ""
+    @Published var displayName = ""
     
     func signUp() async throws {
         guard !email.isEmpty, !password.isEmpty else {
@@ -19,7 +20,7 @@ final class SignInEmailViewModel: ObservableObject {
             return
         }
         
-        let authDataResult = try await AuthenticationManager.shared.createUser(email: email, password: password)
+        let authDataResult = try await AuthenticationManager.shared.createUser(email: email, password: password, displayName: displayName)
         let user = DBUser(auth: authDataResult)
         try await UserManager.shared.createNewUser(user: user)
     }

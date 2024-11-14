@@ -27,12 +27,6 @@ struct ProfileView: View {
                             if let isAnonymous = user.isAnonymous {
                                 Text("Is Anonymous: \(isAnonymous.description.capitalized)")
                             }
-                            
-                            Button {
-                                viewModel.togglePremiumStatus()
-                            } label: {
-                                Text("Premium Status: \((user.isPremium ?? false).description.capitalized)")
-                            }
                         }
                         
                     }

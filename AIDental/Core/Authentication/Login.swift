@@ -20,20 +20,6 @@ struct Login: View {
     @Binding var showSignInView: Bool
     var body: some View {
         VStack(alignment: .leading, spacing: 15, content: {
-//            Spacer(minLength: 0)
-//            Image("skin")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(width: 100, height: 100)
-//                .clipShape(Circle())
-//                .offset(y: -50)
-//                .hSpacing()
-//            Text("SKINALYSIS")
-//                .font(.subheadline)
-//                .fontWeight(.heavy)
-//                .foregroundStyle(.appPink)
-//                .offset(y: -60)
-//                .hSpacing()
             Spacer(minLength: 0)
             Text("Log In")
                 .font(.largeTitle)

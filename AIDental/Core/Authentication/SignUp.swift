@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SignUp: View {
     @Binding var showSignup: Bool
-    @State private var fullName: String = ""
     @Binding var showSignInView: Bool
     @StateObject private var viewModel = SignInEmailViewModel()
   
@@ -25,19 +24,6 @@ struct SignUp: View {
             })
             .padding(.top, 10)
             Spacer(minLength: 0)
-//            Image("skin")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(width: 100, height: 100)
-//                .clipShape(Circle())
-//                .offset(y: -25)
-//                .hSpacing()
-//            Text("SKINALYSIS")
-//                .font(.subheadline)
-//                .fontWeight(.heavy)
-//                .foregroundStyle(.appPink)
-//                .offset(y: -35)
-//                .hSpacing()
             Text("Sign Up")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
@@ -53,7 +39,7 @@ struct SignUp: View {
                 /// Custom Text Fields
                 CustomTF(sfIcon: "at", hint: "Email ID", value: $viewModel.email)
                 
-                CustomTF(sfIcon: "person", hint: "Full Name", value: $fullName)
+                CustomTF(sfIcon: "person", hint: "Full Name", value: $viewModel.displayName)
                     .padding(.top, 5)
                 
                 CustomTF(sfIcon: "lock", hint: "Password", isPassword: true, value: $viewModel.password)
