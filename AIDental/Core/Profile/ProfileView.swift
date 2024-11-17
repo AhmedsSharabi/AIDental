@@ -46,9 +46,9 @@ struct ProfileView: View {
             .task {
                 try? await viewModel.loadCurrentUser()
             }
-            .onChange(of: selectedItem) { newItem in
-                if let newItem {
-                    viewModel.saveProfileImage(item: newItem)
+            .onChange(of: selectedItem) {
+                if let selectedItem {
+                    viewModel.saveProfileImage(item: selectedItem)
                 }
             }
         }

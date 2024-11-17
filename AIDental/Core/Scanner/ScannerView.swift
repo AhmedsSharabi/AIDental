@@ -141,8 +141,8 @@ struct ScannerView: View {
             .task {
                 try? await viewModel.loadCurrentUser()
             }
-            .onChange(of: session.isRunning) { newValue in
-                if newValue {
+            .onChange(of: session.isRunning) {
+                if session.isRunning {
                     orientation = UIDevice.current.orientation
                 }
             }
