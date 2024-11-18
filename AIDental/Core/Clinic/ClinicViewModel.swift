@@ -5,9 +5,9 @@
 //  Created by Ahmed Sharabi on 05/11/2024.
 //
 
-import MapKit
 import CoreLocation
 import SwiftUI
+import MapKit
 
 class ClinicViewModel: ObservableObject {
     @Published var clinics = [Clinic]()
