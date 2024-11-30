@@ -10,7 +10,7 @@ import MapKit
 
 struct ClinicView: View {
     @State var clinic: Clinic
-    @StateObject var viewModel = ClinicViewModel()
+    @State var viewModel = ClinicViewModel()
     @State private var appointmentDate: Date = Date()
     @State private var showAppointmentSheet = false
     @State private var notes: String = ""

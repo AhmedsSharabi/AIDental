@@ -9,8 +9,9 @@ import CoreLocation
 import SwiftUI
 import MapKit
 
-class ClinicViewModel: ObservableObject {
-    @Published var clinics = [Clinic]()
+@Observable class ClinicViewModel {
+    var clinics = [Clinic]()
+    var selectedClinicCoordinate: CLLocationCoordinate2D?
     
     func searchDentalClinics(near location: CLLocation) {
         let request = MKLocalSearch.Request()

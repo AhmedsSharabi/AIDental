@@ -11,16 +11,23 @@ struct ContentView: View {
     @State private var showSignInView: Bool = false
     @State private var showSignup: Bool = false
     @State private var isKeyboardShowing: Bool = false
+    @State private var showOnboarding: Bool = true
     
     var body: some View {
         ZStack {
-            if !showSignInView {
+            if showOnboarding {
+                OnboardingView(showOnboarding: $showOnboarding)
+            } else if !showSignInView {
                 TabbarView(showSignInView: $showSignInView)
             }
         }
         .onAppear {
             let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
             self.showSignInView = authUser == nil
+            
+            if UserDefaults.standard.bool(forKey: "hasCompletedOnboarding") {
+                showOnboarding = false
+            }
         }
         .fullScreenCover(isPresented: $showSignInView) {
             NavigationStack {
@@ -37,29 +44,7 @@ struct ContentView: View {
                         isKeyboardShowing = false
                     })
             }
-//            .overlay {
-//                if #available(iOS 17, *) {
-//                    CircleView()
-//                        .animation(.smooth(duration: 0.45, extraBounce: 0), value: showSignup)
-//                        .animation(.smooth(duration: 0.45, extraBounce: 0), value: isKeyboardShowing)
-//                } else {
-//                    CircleView()
-//                        .animation(.easeInOut(duration: 0.3), value: showSignup)
-//                        .animation(.easeInOut(duration: 0.3), value: isKeyboardShowing)
-//                }
-//            }
         }
-    }
-    @ViewBuilder
-    func CircleView() -> some View {
-        Circle()
-            .fill(.linearGradient(colors: [.app, .red], startPoint: .top, endPoint: .bottom))
-            .frame(width: 200, height: 200)
-            /// Moving When the Signup Pages Loads/Dismisses
-            .offset(x: showSignup ? 90 : -90, y: -90 - (isKeyboardShowing ? 200 : 0))
-            .blur(radius: 15)
-            .hSpacing(showSignup ? .trailing : .leading)
-            .vSpacing(.top)
     }
 }
 

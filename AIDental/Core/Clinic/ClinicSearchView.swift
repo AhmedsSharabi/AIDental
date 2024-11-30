@@ -12,8 +12,7 @@ import CoreLocation
 
 struct ClinicSearchView: View {
     @StateObject private var locationManager = LocationManager()
-    @State private var selectedClinicCoordinate: CLLocationCoordinate2D?
-    @StateObject var viewModel = ClinicViewModel()
+    @State var viewModel = ClinicViewModel()
     
     var body: some View {
         NavigationStack {
@@ -21,7 +20,7 @@ struct ClinicSearchView: View {
                 // Map View
                 if let userLocation = locationManager.userLocation {
                     Map(coordinateRegion: .constant(MKCoordinateRegion(
-                        center: selectedClinicCoordinate ?? userLocation.coordinate,
+                        center: viewModel.selectedClinicCoordinate ?? userLocation.coordinate,
                         span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))),
                         annotationItems: viewModel.clinics) { clinic in
                         MapMarker(coordinate: clinic.mapItem.placemark.coordinate, tint: .blue)
@@ -47,6 +46,7 @@ struct ClinicSearchView: View {
                                         .font(.subheadline)
                                         .foregroundColor(.gray)
                                         .padding(.bottom)
+
                                     HStack {
                                         
                                         
@@ -65,7 +65,7 @@ struct ClinicSearchView: View {
                                 .padding()
                                 .onAppear() {
                                     withAnimation {
-                                        selectedClinicCoordinate = clinic.mapItem.placemark.coordinate
+                                        viewModel.selectedClinicCoordinate = clinic.mapItem.placemark.coordinate
                                     }
                                 }
                             }
