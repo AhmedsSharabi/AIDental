@@ -26,7 +26,7 @@ struct ClinicView: View {
                     .padding(.top)
                 
                 // Address
-                if let address = clinic.mapItem.placemark.title {
+                if let address = clinic.mapItem.address {
                     Text("📍 \(address)")
                         .font(.subheadline)
                         .foregroundColor(.gray)

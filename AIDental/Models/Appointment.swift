@@ -9,7 +9,8 @@ import Foundation
 
 struct Appointment: Codable, Identifiable {
     var id = UUID()
-    let date: Date
-    let clinicName: String
+    var date: Date
+    var clinic: Clinic
     var notes: String
+    
 }

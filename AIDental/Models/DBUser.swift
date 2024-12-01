@@ -17,6 +17,7 @@ struct DBUser: Codable {
     let profileImagePath: String?
     let profileImagePathUrl: String?
     let prediction: [Prediction]?
+    let appointment: [Appointment]?
 
     init(auth: AuthDataResultModel) {
         self.userId = auth.uid
@@ -28,6 +29,7 @@ struct DBUser: Codable {
         self.profileImagePath = nil
         self.profileImagePathUrl = nil
         self.prediction = nil
+        self.appointment = nil
     }
     
     init(
@@ -39,7 +41,8 @@ struct DBUser: Codable {
         dateCreated: Date? = nil,
         profileImagePath: String? = nil,
         profileImagePathUrl: String? = nil,
-        prediction: [Prediction]? = nil
+        prediction: [Prediction]? = nil,
+        appointment: [Appointment]? = nil
     ) {
         self.userId = userId
         self.isAnonymous = isAnonymous
@@ -50,6 +53,7 @@ struct DBUser: Codable {
         self.profileImagePath = profileImagePath
         self.profileImagePathUrl = profileImagePathUrl
         self.prediction = prediction
+        self.appointment = appointment
     }
     
     enum CodingKeys: String, CodingKey {
@@ -62,6 +66,7 @@ struct DBUser: Codable {
         case profileImagePath = "profile_image_path"
         case profileImagePathUrl = "profile_image_path_url"
         case prediction = "prediction"
+        case appointment = "appointment"
     }
 
     init(from decoder: Decoder) throws {
@@ -75,6 +80,7 @@ struct DBUser: Codable {
         self.profileImagePath = try container.decodeIfPresent(String.self, forKey: .profileImagePath)
         self.profileImagePathUrl = try container.decodeIfPresent(String.self, forKey: .profileImagePathUrl)
         self.prediction = try container.decodeIfPresent([Prediction].self, forKey: .prediction)
+        self.appointment = try container.decodeIfPresent([Appointment].self, forKey: .appointment)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -88,6 +94,7 @@ struct DBUser: Codable {
         try container.encodeIfPresent(self.profileImagePath, forKey: .profileImagePath)
         try container.encodeIfPresent(self.profileImagePathUrl, forKey: .profileImagePathUrl)
         try container.encodeIfPresent(self.prediction, forKey: .prediction)
+        try container.encodeIfPresent(self.appointment, forKey: .appointment)
     }
     
 }

@@ -9,9 +9,8 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
-
 struct ClinicSearchView: View {
-    @StateObject private var locationManager = LocationManager()
+    @State var locationManager = LocationManager()
     @State var viewModel = ClinicViewModel()
     
     var body: some View {
@@ -19,21 +18,34 @@ struct ClinicSearchView: View {
             ZStack {
                 // Map View
                 if let userLocation = locationManager.userLocation {
-                    Map(coordinateRegion: .constant(MKCoordinateRegion(
-                        center: viewModel.selectedClinicCoordinate ?? userLocation.coordinate,
-                        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))),
-                        annotationItems: viewModel.clinics) { clinic in
-                        MapMarker(coordinate: clinic.mapItem.placemark.coordinate, tint: .blue)
+                    Map(
+                        coordinateRegion: .constant(
+                            MKCoordinateRegion(
+                                center: viewModel.selectedClinicCoordinate ?? userLocation.coordinate,
+                                span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+                            )
+                        ),
+                        annotationItems: viewModel.clinics
+                    ) { clinic in
+                        MapMarker(
+                            coordinate: CLLocationCoordinate2D(
+                                latitude: clinic.mapItem.latitude,
+                                longitude: clinic.mapItem.longitude
+                            ),
+                            tint: .blue
+                        )
                     }
-                        .edgesIgnoringSafeArea(.top)
-                        .onAppear {
-                            viewModel.searchDentalClinics(near: userLocation)
-                        }
+                    .edgesIgnoringSafeArea(.top)
+                    .onAppear {
+                        viewModel.searchDentalClinics(near: userLocation)
+                    }
                 } else {
                     Text("Locating...")
                 }
+                
                 VStack {
                     Spacer()
+                    
                     // Swiping Cards
                     if !viewModel.clinics.isEmpty {
                         TabView {
@@ -42,41 +54,39 @@ struct ClinicSearchView: View {
                                     Text(clinic.mapItem.name ?? "Unknown Clinic")
                                         .font(.headline)
                                         .padding()
-                                    Text(clinic.mapItem.placemark.title ?? "")
+                                    Text("\(clinic.mapItem.latitude), \(clinic.mapItem.longitude)")
                                         .font(.subheadline)
                                         .foregroundColor(.gray)
                                         .padding(.bottom)
-
-                                    HStack {
-                                        
-                                        
-                                        NavigationLink(destination: ClinicView(clinic: clinic)) {
-                                            Text("View Clinic")
-                                                .foregroundColor(.app)
-                                            
-                                        }
+                                    
+                                    NavigationLink(destination: ClinicView(clinic: clinic)) {
+                                        Text("View Clinic")
+                                            .foregroundColor(.blue)
+                                            .padding()
                                     }
-                                    .padding()
                                 }
                                 .frame(width: 300, height: 200)
                                 .background(Color.white)
                                 .cornerRadius(10)
                                 .shadow(radius: 5)
                                 .padding()
-                                .onAppear() {
+                                .onAppear {
                                     withAnimation {
-                                        viewModel.selectedClinicCoordinate = clinic.mapItem.placemark.coordinate
+                                        viewModel.selectedClinicCoordinate = CLLocationCoordinate2D(
+                                            latitude: clinic.mapItem.latitude,
+                                            longitude: clinic.mapItem.longitude
+                                        )
                                     }
                                 }
                             }
                         }
                         .tabViewStyle(PageTabViewStyle())
                         .frame(height: 250)
-                        .padding(.bottom, 5) // Adjust as needed for layout
+                        .padding(.bottom, 5)
                     }
                 }
             }
-            .onAppear {
+            .task {
                 locationManager.requestLocation()
             }
         }

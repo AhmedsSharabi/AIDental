@@ -27,7 +27,8 @@ import MapKit
         }
     }
     
-    func openInMaps(for mapItem: MKMapItem) {
+    func openInMaps(for mapItemData: MapItemData) {
+        let mapItem = mapItemData.toMKMapItem()
         mapItem.openInMaps(launchOptions: [
             MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving
         ])

@@ -8,10 +8,10 @@
 import Foundation
 import CoreLocation
 
-
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+@Observable
+class LocationManager: NSObject, CLLocationManagerDelegate {
     private let manager = CLLocationManager()
-    @Published var userLocation: CLLocation?
+    var userLocation: CLLocation?
     
     override init() {
         super.init()
@@ -30,5 +30,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Location update failed: \(error)")
+    }
+    func distanceBetween(userLocation: CLLocation, clinicLocation: CLLocation) -> CLLocationDistance {
+        return userLocation.distance(from: clinicLocation)
     }
 }

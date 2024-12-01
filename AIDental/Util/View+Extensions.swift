@@ -57,6 +57,9 @@ extension Color {
     func appColor() -> Color {
         Color("appColor")
     }
+    func appLight() -> Color {
+        Color("applight")
+    }
 }
 
 // Extension to compare CLLocationCoordinate2D values

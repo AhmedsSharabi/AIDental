@@ -11,6 +11,13 @@ struct TabbarView: View {
     @Binding var showSignInView: Bool
     var body: some View {
         TabView {
+            
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+            
             ClinicSearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")

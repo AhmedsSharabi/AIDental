@@ -84,4 +84,30 @@ final class UserManager {
         ])
     }
     
+    func addAppointment(userId: String, appointment: Appointment) async throws {
+        guard let encodedAppointment = try? Firestore.Encoder().encode(appointment) else {
+            throw URLError(.badURL)
+        }
+        guard let dict = encodedAppointment as? [String: Any] else {
+            throw URLError(.badURL)
+        }
+        let userDocRef = Firestore.firestore().collection("users").document(userId)
+        try await userDocRef.updateData([
+            DBUser.CodingKeys.appointment.rawValue: FieldValue.arrayUnion([dict])
+        ])
+    }
+    
+    func removeAppointment(userId: String, appointment: Appointment) async throws {
+        guard let encodedAppointment = try? Firestore.Encoder().encode(appointment) else {
+            throw URLError(.badURL)
+        }
+        guard let dict = encodedAppointment as? [String: Any] else {
+            throw URLError(.badURL)
+        }
+        let userDocRef = Firestore.firestore().collection("users").document(userId)
+        try await userDocRef.updateData([
+            DBUser.CodingKeys.appointment.rawValue: FieldValue.arrayRemove([dict])
+        ])
+    }
+    
 }
