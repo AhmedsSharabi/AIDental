@@ -10,39 +10,51 @@ import PhotosUI
 
 struct ProfileView: View {
     
-    @StateObject private var viewModel = ProfileViewModel()
+    @State var viewModel = ProfileViewModel()
     @Binding var showSignInView: Bool
+    @State var isFaceIDEnabled: Bool = false
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var showPredictionDetails = false
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
+            VStack {
                 profileHeader
-                
                 Form {
-                    if let user = viewModel.user {
-                        
-                        Section(header: Text("User Information")) {
-                            if let isAnonymous = user.isAnonymous {
-                                Text("Is Anonymous: \(isAnonymous.description.capitalized)")
-                            }
+                    Section("More Settings") {
+                        Toggle(isOn: $isFaceIDEnabled) {
+                            Label("Face ID", systemImage: "faceid")
                         }
-                        
-                    }
-                }
-                .navigationTitle("Profile")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink {
+                            
+                        } label: {
+                            Label("Past Predictions", systemImage: "list.bullet.rectangle")
+                        }
                         NavigationLink {
                             SettingsView(showSignInView: $showSignInView)
                         } label: {
-                            Image(systemName: "gear")
-                                .font(.headline)
+                            Label("Settings", systemImage: "gear")
                         }
                     }
+                    Section("More Info") {
+                        
+                        NavigationLink {
+                            
+                        } label: {
+                            Label("About", systemImage: "info.circle")
+                        }
+                        NavigationLink {
+                            
+                        } label: {
+                            Label("Help", systemImage: "questionmark.circle")
+                        }
+                    }
+                    
                 }
+                .scrollContentBackground(.hidden)
+                .background(Color(.systemGroupedBackground))
             }
+            .background(Color(.systemGroupedBackground))
             .task {
                 try? await viewModel.loadCurrentUser()
             }
@@ -56,41 +68,78 @@ struct ProfileView: View {
     
     private var profileHeader: some View {
         VStack {
-            PhotosPicker(selection: $selectedItem, matching: .images, photoLibrary: .shared()) {
-                ZStack {
-                    Circle()
-                        .fill(Color.gray.opacity(0.2))
-                        .frame(width: 80, height: 80)
-                    
-                    if let urlString = viewModel.user?.profileImagePathUrl, let url = URL(string: urlString) {
-                        AsyncImage(url: url) { image in
-                            image
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 80, height: 80)
-                                .clipShape(Circle())
-                        } placeholder: {
-                            ProgressView()
-                                .frame(width: 80, height: 80)
+            HStack {
+                Rectangle()
+                    .fill(.applight)
+                    .frame(width: 210, height: 350)
+                    .ignoresSafeArea()
+                    .overlay {
+                        VStack {
+                            PhotosPicker(selection: $selectedItem, matching: .images, photoLibrary: .shared()) {
+                                ZStack {
+                                    Circle()
+                                        .fill(Color.gray.opacity(0.2))
+                                        .frame(width: 80, height: 80)
+                                    
+                                    if let urlString = viewModel.user?.profileImagePathUrl, let url = URL(string: urlString) {
+                                        AsyncImage(url: url) { image in
+                                            image
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(width: 124, height: 124)
+                                                .clipShape(Circle())
+                                        } placeholder: {
+                                            ProgressView()
+                                                .frame(width: 80, height: 80)
+                                        }
+                                    } else {
+                                        Image(systemName: "person.crop.circle.badge.plus")
+                                            .font(.system(size: 40))
+                                            .foregroundColor(.blue)
+                                    }
+                                }
+                            }
+                            Text(viewModel.user?.displayName ?? "App User")
+                                .font(.system(size: 24))
+                                .fontWeight(.semibold)
+                                .padding(.top, 8)
                         }
-                    } else {
-                        Image(systemName: "person.crop.circle.badge.plus")
-                            .font(.system(size: 40))
-                            .foregroundColor(.blue)
                     }
+                VStack(alignment: .leading) {
+                        Text("Profile")
+                            .font(.system(size: 24))
+                            .fontWeight(.bold)
+                            .padding(.horizontal, 16)
+                            .padding(.bottom, 60)
+                            .hSpacing(.trailing)
+                        Text("Email")
+                            .font(.system(size: 14))
+                        Text(viewModel.user?.email ?? "ahmeds.alsharabi@gmaail.com")
+                            .font(.system(size: 10))
+                            .padding(.bottom, 15)
+                        
+                        Text("Contact")
+                            .font(.system(size: 14))
+                        Text("01128534629")
+                            .font(.system(size: 10))
+                            .padding(.bottom, 15)
+                        
+                        Text("Password")
+                            .font(.system(size: 14))
+                        Text("ahmeds.alsharab")
+                            .font(.system(size: 10))
+                    
+                    Spacer()
+                    
                 }
+                .frame(maxHeight: .infinity)
+                    
             }
-            .padding(.top, 16)
+            .frame(height: 280)
+            .hSpacing(.leading)
             
-            if let user = viewModel.user {
-                Text(user.email ?? user.userId)
-                    .font(.headline)
-                    .padding(.top, 8)
-                
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .background(Color(UIColor.systemGroupedBackground))
+
+        }.background(Color(.systemGroupedBackground))
     }
 }
 

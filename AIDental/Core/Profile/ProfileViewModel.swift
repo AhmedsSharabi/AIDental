@@ -8,10 +8,10 @@
 import SwiftUI
 import PhotosUI
 
-@MainActor
-final class ProfileViewModel: ObservableObject {
+@MainActor @Observable
+ class ProfileViewModel {
     
-    @Published private(set) var user: DBUser? = nil
+    var user: DBUser? = nil
     
     func loadCurrentUser() async throws {
         let authDataResult = try AuthenticationManager.shared.getAuthenticatedUser()
