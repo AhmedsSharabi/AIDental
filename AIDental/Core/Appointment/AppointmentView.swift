@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-struct ClinicView: View {
+struct AppointmentView: View {
     @State var clinic: Clinic
     @State var viewModel = ClinicViewModel()
     @State private var appointmentDate: Date = Date()

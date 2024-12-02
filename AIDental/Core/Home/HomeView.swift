@@ -117,7 +117,7 @@ struct HomeView: View {
                                             Image(systemName: "calendar")
                                                 .foregroundColor(.app)
                                         )
-                                    VStack {
+                                    VStack(alignment: .leading) {
                                         let appointment = viewModel.user?.appointment?.last?.clinic.mapItem.name ?? "Unknown Clinic"
                                         Text(appointment)
                                             .font(.system(size: 20))
