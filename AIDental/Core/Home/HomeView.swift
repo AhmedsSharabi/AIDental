@@ -124,8 +124,8 @@ struct HomeView: View {
                                             .fontWeight(.semibold)
                                             .foregroundStyle(.white)
                                         
-                                        let location = viewModel.user?.appointment?.last?.clinic.mapItem.toMKMapItem()
-                                        Text(location?.placemark.locality ?? "Unknown Address")
+                                        let location = viewModel.user?.appointment?.last?.clinic.mapItem.street ?? "Unknown Address"
+                                        Text(location)
                                             .font(.system(size: 15))
                                             .fontWeight(.medium)
                                             .foregroundStyle(.white)
@@ -205,7 +205,7 @@ struct HomeView: View {
                                         .fontWeight(.bold)
                                         .foregroundStyle(.app)
                                     if let date = viewModel.user?.prediction?.last?.date {
-                                        Text("Last checked \(date)")
+                                        Text("Last checked: \(date.formatted(date: .long, time: .omitted))")
                                             .font(.system(size: 14))
                                             .fontWeight(.medium)
                                             .foregroundStyle(.secondary)

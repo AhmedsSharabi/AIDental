@@ -21,9 +21,11 @@
 		16A9648D2CFA7644009B6C19 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A9648C2CFA7644009B6C19 /* DBUser.swift */; };
 		16A9648F2CFA766C009B6C19 /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A9648E2CFA766C009B6C19 /* Prediction.swift */; };
 		16A964912CFA768F009B6C19 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A964902CFA768F009B6C19 /* Appointment.swift */; };
+		16A965782CFDFF6F009B6C19 /* AppointmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A965772CFDFF6F009B6C19 /* AppointmentViewModel.swift */; };
+		16A9657A2CFE2387009B6C19 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A965792CFE2387009B6C19 /* SuccessView.swift */; };
 		16B8E7F42CD8FBAF00B72C4E /* ClinicSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E7F32CD8FBAF00B72C4E /* ClinicSearchView.swift */; };
 		16B8E7F62CD92EBC00B72C4E /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E7F52CD92EBC00B72C4E /* TabbarView.swift */; };
-		16B8E7F82CDA230100B72C4E /* ClinicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E7F72CDA230100B72C4E /* ClinicView.swift */; };
+		16B8E7F82CDA230100B72C4E /* AppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E7F72CDA230100B72C4E /* AppointmentView.swift */; };
 		16B8E7FA2CDA23CA00B72C4E /* ClinicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E7F92CDA23CA00B72C4E /* ClinicViewModel.swift */; };
 		16B8E7FC2CDA24BE00B72C4E /* Clinic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E7FB2CDA24BE00B72C4E /* Clinic.swift */; };
 		16B8E7FE2CDA27A300B72C4E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E7FD2CDA27A300B72C4E /* LocationManager.swift */; };
@@ -95,9 +97,11 @@
 		16A9648C2CFA7644009B6C19 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		16A9648E2CFA766C009B6C19 /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
 		16A964902CFA768F009B6C19 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		16A965772CFDFF6F009B6C19 /* AppointmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewModel.swift; sourceTree = "<group>"; };
+		16A965792CFE2387009B6C19 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		16B8E7F32CD8FBAF00B72C4E /* ClinicSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicSearchView.swift; sourceTree = "<group>"; };
 		16B8E7F52CD92EBC00B72C4E /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
-		16B8E7F72CDA230100B72C4E /* ClinicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicView.swift; sourceTree = "<group>"; };
+		16B8E7F72CDA230100B72C4E /* AppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentView.swift; sourceTree = "<group>"; };
 		16B8E7F92CDA23CA00B72C4E /* ClinicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicViewModel.swift; sourceTree = "<group>"; };
 		16B8E7FB2CDA24BE00B72C4E /* Clinic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clinic.swift; sourceTree = "<group>"; };
 		16B8E7FD2CDA27A300B72C4E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -170,6 +174,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16A965762CFDFF38009B6C19 /* Appointment */ = {
+			isa = PBXGroup;
+			children = (
+				16B8E7F72CDA230100B72C4E /* AppointmentView.swift */,
+				16A965772CFDFF6F009B6C19 /* AppointmentViewModel.swift */,
+			);
+			path = Appointment;
+			sourceTree = "<group>";
+		};
 		16B8E8012CDA289E00B72C4E /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +196,7 @@
 				16B8E8082CDA2A5A00B72C4E /* Clinic */,
 				16B8E8072CDA2A2C00B72C4E /* Scanner */,
 				16B8E8022CDA28B000B72C4E /* Authentication */,
+				16A965762CFDFF38009B6C19 /* Appointment */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -230,6 +244,7 @@
 			children = (
 				16F5AAF02CB7E37C00255DFC /* View+Extensions.swift */,
 				16A355D92CB7EA3F00E97AB5 /* Utilities.swift */,
+				16A965792CFE2387009B6C19 /* SuccessView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -257,7 +272,6 @@
 		16B8E8082CDA2A5A00B72C4E /* Clinic */ = {
 			isa = PBXGroup;
 			children = (
-				16B8E7F72CDA230100B72C4E /* ClinicView.swift */,
 				16B8E7F92CDA23CA00B72C4E /* ClinicViewModel.swift */,
 				16B8E7F32CD8FBAF00B72C4E /* ClinicSearchView.swift */,
 			);
@@ -460,7 +474,7 @@
 				16F5AAF92CB7E40F00255DFC /* SignUp.swift in Sources */,
 				16C40E332CBE376600998195 /* ResultView.swift in Sources */,
 				16C40E2F2CBE369800998195 /* ImagePicker.swift in Sources */,
-				16B8E7F82CDA230100B72C4E /* ClinicView.swift in Sources */,
+				16B8E7F82CDA230100B72C4E /* AppointmentView.swift in Sources */,
 				16B8E7F42CD8FBAF00B72C4E /* ClinicSearchView.swift in Sources */,
 				16A355DA2CB7EA3F00E97AB5 /* Utilities.swift in Sources */,
 				16A355DE2CB7EAEB00E97AB5 /* PasswordResetView.swift in Sources */,
@@ -475,6 +489,7 @@
 				16CFCD8B2CFA5B0700AF778D /* OnBoardingPage.swift in Sources */,
 				16A355E92CB916AB00E97AB5 /* StorageManager.swift in Sources */,
 				16C40E292CBE363000998195 /* ScannerView.swift in Sources */,
+				16A965782CFDFF6F009B6C19 /* AppointmentViewModel.swift in Sources */,
 				16A964912CFA768F009B6C19 /* Appointment.swift in Sources */,
 				16B8E7FE2CDA27A300B72C4E /* LocationManager.swift in Sources */,
 				16F5AAF12CB7E37C00255DFC /* View+Extensions.swift in Sources */,
@@ -489,6 +504,7 @@
 				16BEBC3B2C8A067900CB9170 /* AIDentalApp.swift in Sources */,
 				16C40E2D2CBE367A00998195 /* VideoOutputDelegate.swift in Sources */,
 				16A355E32CB9157F00E97AB5 /* ProfileViewModel.swift in Sources */,
+				16A9657A2CFE2387009B6C19 /* SuccessView.swift in Sources */,
 				16A355E12CB9156000E97AB5 /* ProfileView.swift in Sources */,
 				16F5AB062CB7E74500255DFC /* AuthenticationManager.swift in Sources */,
 				16A355E72CB915AE00E97AB5 /* SettingsViewModel.swift in Sources */,

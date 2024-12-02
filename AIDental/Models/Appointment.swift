@@ -12,5 +12,6 @@ struct Appointment: Codable, Identifiable {
     var date: Date
     var clinic: Clinic
     var notes: String
+    var prediction: Prediction?
     
 }

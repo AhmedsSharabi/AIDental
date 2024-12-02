@@ -83,7 +83,7 @@ struct ClinicSearchView: View {
                                         }
                                     }.padding(.horizontal, 16)
                                     
-                                    NavigationLink(destination: ClinicView(clinic: clinic)) {
+                                    NavigationLink(destination: AppointmentView(clinic: clinic)) {
                                         Rectangle()
                                         .fill(.applight)
                                         .frame(width: 211, height: 41)
