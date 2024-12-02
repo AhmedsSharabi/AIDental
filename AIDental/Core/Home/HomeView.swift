@@ -26,19 +26,19 @@ struct HomeView: View {
             }
             
             VStack(alignment: .leading) {
-                HStack {
+                VStack(alignment: .leading, spacing: 2) {
                     Text("Hello,")
-                        .font(.system(size: 24))
+                        .font(.system(size: 27))
                         .fontWeight(.bold)
                         .foregroundStyle(.primary)
                     Text(viewModel.user?.displayName ?? "User")
-                        .font(.system(size: 24))
+                        .font(.system(size: 27))
                         .fontWeight(.bold)
                         .foregroundStyle(.app)
                 }
                 .hSpacing(.leading)
                 .padding(.top, 60)
-                .padding(.bottom, 20)
+                .padding(.bottom, 10)
                 
                 
                 Text("Dental Clinic Near Me")

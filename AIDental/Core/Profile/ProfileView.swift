@@ -116,18 +116,21 @@ struct ProfileView: View {
                             .font(.system(size: 14))
                         Text(viewModel.user?.email ?? "ahmeds.alsharabi@gmaail.com")
                             .font(.system(size: 10))
+                            .fontWeight(.semibold)
                             .padding(.bottom, 15)
                         
                         Text("Contact")
                             .font(.system(size: 14))
                         Text("01128534629")
                             .font(.system(size: 10))
+                            .fontWeight(.semibold)
                             .padding(.bottom, 15)
                         
                         Text("Password")
                             .font(.system(size: 14))
                         Text("ahmeds.alsharab")
                             .font(.system(size: 10))
+                            .fontWeight(.semibold)
                     
                     Spacer()
                     

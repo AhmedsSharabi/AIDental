@@ -51,24 +51,57 @@ struct ClinicSearchView: View {
                         TabView {
                             ForEach(viewModel.clinics) { clinic in
                                 VStack {
-                                    Text(clinic.mapItem.name ?? "Unknown Clinic")
-                                        .font(.headline)
-                                        .padding()
-                                    Text("\(clinic.mapItem.latitude), \(clinic.mapItem.longitude)")
-                                        .font(.subheadline)
-                                        .foregroundColor(.gray)
-                                        .padding(.bottom)
+                                    HStack {
+                                        Text(clinic.mapItem.name ?? "Unknown Clinic")
+                                            .font(.system(size: 20, weight: .bold))
+                                            .foregroundColor(.white)
+                                            .padding()
+                                        Spacer()
+                                        let distance = locationManager.userLocation?.distance(from: CLLocation(latitude: clinic.mapItem.latitude, longitude: clinic.mapItem.longitude)) ?? 0
+                                        Text("\(Int(distance))m")
+                                            .foregroundColor(.white)
+                                            .font(.system(size: 15))
+                                            .fontWeight(.semibold)
+                                            .padding(.trailing, 16)
+                                    }
+                                    HStack {
+                                        Text("\(clinic.mapItem.address ?? "Unknown Address")")
+                                            .font(.system(size: 15))
+                                            .fontWeight(.medium)
+                                            .foregroundColor(.white)
+                                            Spacer()
+                                        Button {
+                                            if let phoneURL = URL(string: "tel:\(clinic.mapItem.phoneNumber ?? "")") {
+                                                UIApplication.shared.open(phoneURL, options: [:], completionHandler: nil)
+                                            }
+                                        } label: {
+                                            Text("Call")
+                                                .font(.system(size: 15))
+                                                .fontWeight(.black)
+                                                .foregroundColor(.white)
+                                                .underline()
+                                        }
+                                    }.padding(.horizontal, 16)
                                     
                                     NavigationLink(destination: ClinicView(clinic: clinic)) {
-                                        Text("View Clinic")
-                                            .foregroundColor(.blue)
-                                            .padding()
-                                    }
+                                        Rectangle()
+                                        .fill(.applight)
+                                        .frame(width: 211, height: 41)
+                                        .cornerRadius(14)
+                                        .overlay {
+                                            Text("Book Appointment")
+                                                .font(.system(size: 15))
+                                                .foregroundColor(.app)
+                                                .fontWeight(.bold)
+                                        }
+                                        
+                                    }.padding(.top, 16)
                                 }
-                                .frame(width: 300, height: 200)
-                                .background(Color.white)
+                                .frame(width: UIScreen.main.bounds.width - 32, height: 200)
+                                .background(.app)
                                 .cornerRadius(10)
-                                .shadow(radius: 5)
+                                .shadow(radius: 2)
+                                .padding(16)
                                 .padding()
                                 .onAppear {
                                     withAnimation {
@@ -80,7 +113,7 @@ struct ClinicSearchView: View {
                                 }
                             }
                         }
-                        .tabViewStyle(PageTabViewStyle())
+                        .tabViewStyle(.page(indexDisplayMode: .never))
                         .frame(height: 250)
                         .padding(.bottom, 5)
                     }

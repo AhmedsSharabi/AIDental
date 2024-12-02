@@ -69,7 +69,7 @@ struct ClinicView: View {
                         .font(.headline)
                     
                     DatePicker("Select Date & Time", selection: $appointmentDate, displayedComponents: [.date, .hourAndMinute])
-                        .datePickerStyle(CompactDatePickerStyle())
+                        .datePickerStyle(.graphical)
                         .padding(.bottom)
                     
                     TextField("Notes (e.g., Reason for visit)", text: $notes)
