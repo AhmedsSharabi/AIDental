@@ -205,7 +205,7 @@ struct HomeView: View {
                                         .fontWeight(.bold)
                                         .foregroundStyle(.app)
                                     if let date = viewModel.user?.prediction?.last?.date {
-                                        Text("Last checked: \(date.formatted(date: .long, time: .omitted))")
+                                        Text("Last checked: \(date.formatted(date: .abbreviated, time: .omitted))")
                                             .font(.system(size: 14))
                                             .fontWeight(.medium)
                                             .foregroundStyle(.secondary)

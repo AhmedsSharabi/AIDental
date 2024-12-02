@@ -74,6 +74,17 @@ struct ScannerView: View {
                 
                 Spacer(minLength: 15)
                 
+               
+                
+                Button(action: { viewModel.captureImage(session: session) }) {
+                    Image(systemName: "camera.aperture")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 60, height: 60)
+                        .foregroundStyle(.app)
+                }
+                .padding(.bottom, 25)
+                
                 Button {
                     showingImagePicker.toggle()
                 } label: {
@@ -89,14 +100,6 @@ struct ScannerView: View {
                         }
                        
                 }
-                
-                Button(action: { viewModel.captureImage(session: session) }) {
-                    Image(systemName: "camera.aperture")
-                        .font(.title)
-                        .appColor()
-                        .frame(width: 50, height: 50)
-                }
-                
                 .sheet(isPresented: $showingImagePicker) {
                     ImagePicker(image: $inputImage) {
                         if let image = inputImage {
