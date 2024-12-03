@@ -9,9 +9,10 @@ import SwiftUI
 import CoreLocation
 
 struct HomeView: View {
-    @StateObject private var viewModel = HomeViewModel()
+    @State var viewModel = HomeViewModel()
     @State var clinicViewModel = ClinicViewModel()
     @State var locationManager = LocationManager()
+    @Binding var selectedTab: Int
     var body: some View {
         ZStack {
             
@@ -176,6 +177,11 @@ struct HomeView: View {
                                 .font(.system(size: 15))
                                 .foregroundStyle(.secondary)
                         )
+                        .onTapGesture {
+                            withAnimation {
+                                selectedTab = 1
+                            }
+                        }
                     
                 }
                 Text("My Teeth Condition")
@@ -231,6 +237,11 @@ struct HomeView: View {
                                 .scaledToFit()
                                 .frame(height: 50)
                         )
+                        .onTapGesture {
+                            withAnimation {
+                                selectedTab = 2
+                            }
+                        }
                 }
                 
                 Rectangle()
@@ -267,5 +278,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(selectedTab: .constant(0))
 }

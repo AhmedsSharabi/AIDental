@@ -7,10 +7,10 @@
 
 import Foundation
 
-@MainActor
-final class HomeViewModel: ObservableObject {
+@MainActor @Observable
+final class HomeViewModel {
     
-    @Published private(set) var user: DBUser? = nil
+     var user: DBUser? = nil
     
     func loadCurrentUser() async throws {
         let authDataResult = try AuthenticationManager.shared.getAuthenticatedUser()
