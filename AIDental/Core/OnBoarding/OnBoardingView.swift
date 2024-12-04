@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingView: View {
     @Binding var showOnboarding: Bool
     @State private var currentPage = 0
+    @Binding var showSignInView: Bool
     
     var body: some View {
         ZStack {
@@ -32,6 +33,7 @@ struct OnboardingView: View {
                     Button(action: {
                         UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
                         showOnboarding = false
+                        showSignInView = true
                     }) {
                         Text("Get Started")
                             .frame(width: 250, height: 30)
@@ -52,5 +54,5 @@ struct OnboardingView: View {
 }
 
 #Preview {
-    OnboardingView(showOnboarding: .constant(true))
+    OnboardingView(showOnboarding: .constant(true), showSignInView: .constant(false))
 }

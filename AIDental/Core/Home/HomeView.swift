@@ -84,7 +84,7 @@ struct HomeView: View {
                                 }
                             }
                             .padding(.horizontal, 22)
-                            .frame(width: 350, height: 136)
+                            .frame(width: UIScreen.main.bounds.width - 32, height: 136)
                             .background(Color.white)
                             .cornerRadius(14)
                             .shadow(radius: 2)

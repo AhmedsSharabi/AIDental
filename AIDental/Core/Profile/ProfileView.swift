@@ -81,7 +81,7 @@ struct ProfileView: View {
                                         .fill(Color.gray.opacity(0.2))
                                         .frame(width: 80, height: 80)
                                     
-                                    if let urlString = viewModel.user?.profileImagePathUrl, let url = URL(string: urlString) {
+                                    if let urlString = viewModel.user?.photoUrl ?? viewModel.user?.profileImagePathUrl, let url = URL(string: urlString) {
                                         AsyncImage(url: url) { image in
                                             image
                                                 .resizable()

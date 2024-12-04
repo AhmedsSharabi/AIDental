@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if showOnboarding {
-                OnboardingView(showOnboarding: $showOnboarding)
+                OnboardingView(showOnboarding: $showOnboarding, showSignInView: $showSignInView)
             } else if !showSignInView {
                 TabbarView(showSignInView: $showSignInView)
             }
