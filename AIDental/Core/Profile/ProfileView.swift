@@ -26,7 +26,7 @@ struct ProfileView: View {
                             Label("Face ID", systemImage: "faceid")
                         }
                         NavigationLink {
-                            
+                            HistoryView()
                         } label: {
                             Label("Past Predictions", systemImage: "list.bullet.rectangle")
                         }

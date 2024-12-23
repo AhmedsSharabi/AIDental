@@ -1,6 +1,6 @@
 //
 //  API-Key.swift
-//  Skintoms
+//  AIDental
 //
 //  Created by Ahmed Sharabi on 06/07/2024.
 //
