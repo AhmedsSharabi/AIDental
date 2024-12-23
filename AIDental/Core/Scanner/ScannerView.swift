@@ -16,6 +16,7 @@ struct ScannerView: View {
     @State private var orientation: UIDeviceOrientation = UIDevice.current.orientation
     @Environment(\.openURL) private var openURL
     @StateObject private var viewModel = ScannerViewModel()
+    @State var sheetSize: Double = 0.25
     
     var body: some View {
         NavigationView {
@@ -129,9 +130,10 @@ struct ScannerView: View {
             .sheet(isPresented: $viewModel.showResult, onDismiss: {
                 viewModel.reactivateCamera(session: session)
             }) {
-                ResultView(scannerState: $viewModel.scannerState, result: $viewModel.result)
-                    .presentationDetents(viewModel.scannerState == .loading ? [.fraction(0.25)] : [.medium])
+                ResultView(scannerState: $viewModel.scannerState, result: $viewModel.result, sheetSize: $sheetSize)
+                    .presentationDetents(viewModel.scannerState == .loading ? [.fraction(0.25)] : [.fraction(sheetSize)])
             }
+            .scrollIndicators(.visible)
             .sheet(isPresented: $showingImagePicker) {
                 ImagePicker(image: $inputImage) {
                     if let image = inputImage {

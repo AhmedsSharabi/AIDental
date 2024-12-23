@@ -41,6 +41,10 @@
 		16C40E332CBE376600998195 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C40E322CBE376600998195 /* ResultView.swift */; };
 		16CFCD892CFA5AD800AF778D /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CFCD882CFA5AD800AF778D /* OnBoardingView.swift */; };
 		16CFCD8B2CFA5B0700AF778D /* OnBoardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CFCD8A2CFA5B0700AF778D /* OnBoardingPage.swift */; };
+		16E18EAB2D19AE9000D174B5 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E18EAA2D19AE9000D174B5 /* ResultViewModel.swift */; };
+		16E18EAE2D19AECE00D174B5 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 16E18EAD2D19AECE00D174B5 /* GoogleGenerativeAI */; };
+		16E18EB12D19AF3D00D174B5 /* API-Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E18EAF2D19AF3D00D174B5 /* API-Key.swift */; };
+		16E18EB22D19AF3D00D174B5 /* GenerativeAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16E18EB02D19AF3D00D174B5 /* GenerativeAI-Info.plist */; };
 		16F5AABD2CB7E2A500255DFC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 16F5AABC2CB7E2A500255DFC /* GoogleSignIn */; };
 		16F5AABF2CB7E2A500255DFC /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 16F5AABE2CB7E2A500255DFC /* GoogleSignInSwift */; };
 		16F5AAC12CB7E32400255DFC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 16F5AAC02CB7E32400255DFC /* FirebaseAnalytics */; };
@@ -119,6 +123,9 @@
 		16C40E322CBE376600998195 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		16CFCD882CFA5AD800AF778D /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		16CFCD8A2CFA5B0700AF778D /* OnBoardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPage.swift; sourceTree = "<group>"; };
+		16E18EAA2D19AE9000D174B5 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		16E18EAF2D19AF3D00D174B5 /* API-Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API-Key.swift"; sourceTree = "<group>"; };
+		16E18EB02D19AF3D00D174B5 /* GenerativeAI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GenerativeAI-Info.plist"; sourceTree = "<group>"; };
 		16F5AAF02CB7E37C00255DFC /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		16F5AAF22CB7E3B300255DFC /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		16F5AAF42CB7E3DA00255DFC /* CustomTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
@@ -154,6 +161,7 @@
 				16F5AAE52CB7E32400255DFC /* FirebaseMessaging in Frameworks */,
 				16F5AAE12CB7E32400255DFC /* FirebaseInstallations in Frameworks */,
 				16F5AB0C2CB7E7E000255DFC /* FirebaseFirestoreCombine-Community in Frameworks */,
+				16E18EAE2D19AECE00D174B5 /* GoogleGenerativeAI in Frameworks */,
 				16F5AAD32CB7E32400255DFC /* FirebaseDatabase in Frameworks */,
 				16F5AB0A2CB7E7E000255DFC /* FirebaseFirestore in Frameworks */,
 				16F5AAC12CB7E32400255DFC /* FirebaseAnalytics in Frameworks */,
@@ -308,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				16C40E322CBE376600998195 /* ResultView.swift */,
+				16E18EAA2D19AE9000D174B5 /* ResultViewModel.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -331,6 +340,8 @@
 		16BEBC392C8A067900CB9170 /* AIDental */ = {
 			isa = PBXGroup;
 			children = (
+				16E18EAF2D19AF3D00D174B5 /* API-Key.swift */,
+				16E18EB02D19AF3D00D174B5 /* GenerativeAI-Info.plist */,
 				16F5AB002CB7E65000255DFC /* Info.plist */,
 				16F5AAFE2CB7E62900255DFC /* GoogleService-Info.plist */,
 				16BEBC3A2C8A067900CB9170 /* AIDentalApp.swift */,
@@ -420,6 +431,7 @@
 			packageReferences = (
 				16F5AABA2CB4EE5900255DFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				16F5AABB2CB7E2A500255DFC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				16E18EAC2D19AECE00D174B5 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
 			);
 			productRefGroup = 16BEBC382C8A067900CB9170 /* Products */;
 			projectDirPath = "";
@@ -437,6 +449,7 @@
 			files = (
 				16BEBC422C8A067C00CB9170 /* Preview Assets.xcassets in Resources */,
 				16BEBC3F2C8A067C00CB9170 /* Assets.xcassets in Resources */,
+				16E18EB22D19AF3D00D174B5 /* GenerativeAI-Info.plist in Resources */,
 				16F5AAFF2CB7E62900255DFC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +495,7 @@
 				16A964892CFA7037009B6C19 /* HomeView.swift in Sources */,
 				16A9648B2CFA709B009B6C19 /* HomeViewModel.swift in Sources */,
 				16A9648F2CFA766C009B6C19 /* Prediction.swift in Sources */,
+				16E18EB12D19AF3D00D174B5 /* API-Key.swift in Sources */,
 				16CFCD892CFA5AD800AF778D /* OnBoardingView.swift in Sources */,
 				16F5AB082CB7E76C00255DFC /* UserManager.swift in Sources */,
 				16F5AAF72CB7E3F200255DFC /* GradientButton.swift in Sources */,
@@ -511,6 +525,7 @@
 				16F5AB042CB7E6FB00255DFC /* SignInAppleHelper.swift in Sources */,
 				16F5AAFB2CB7E43100255DFC /* Login.swift in Sources */,
 				16A355DC2CB7EAC600E97AB5 /* ForgotPassword.swift in Sources */,
+				16E18EAB2D19AE9000D174B5 /* ResultViewModel.swift in Sources */,
 				16A355E52CB9159500E97AB5 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -732,6 +747,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		16E18EAC2D19AECE00D174B5 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.6;
+			};
+		};
 		16F5AABA2CB4EE5900255DFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -755,6 +778,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 16F5AABA2CB4EE5900255DFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAppCheck;
+		};
+		16E18EAD2D19AECE00D174B5 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16E18EAC2D19AECE00D174B5 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
 		};
 		16F5AABC2CB7E2A500255DFC /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;

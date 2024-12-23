@@ -74,7 +74,7 @@ struct AppointmentView: View {
                             .cornerRadius(14)
                         
                         Toggle(isOn: $viewModel.sharePrediction){
-                            Text("Share Laterst Prediction")
+                            Text("Share My Latest Prediction")
                                 .font(.system(size: 15))
                                 .fontWeight(.semibold)
                                                             

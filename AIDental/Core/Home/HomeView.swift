@@ -206,7 +206,7 @@ struct HomeView: View {
                                 
                                 VStack(alignment: .leading) {
                                     let prediction = viewModel.user?.prediction?.last?.prediction ?? "Excellent"
-                                    Text(prediction)
+                                    Text(prediction.capitalized)
                                         .font(.system(size: 24))
                                         .fontWeight(.bold)
                                         .foregroundStyle(.app)

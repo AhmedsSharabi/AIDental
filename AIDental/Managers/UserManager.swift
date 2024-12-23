@@ -58,7 +58,6 @@ final class UserManager {
     
     
     func addPrediction(userId: String, prediction: Prediction) async throws {
-        print("sucsess")
         guard let encodedPrediction = try? Firestore.Encoder().encode(prediction) else {
             throw URLError(.badURL)
         }
