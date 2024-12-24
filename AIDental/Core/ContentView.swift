@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var showSignup: Bool = false
     @State private var isKeyboardShowing: Bool = false
     @State private var showOnboarding: Bool = true
+    @State private var showAlert: Bool = false
     
     var body: some View {
         ZStack {
@@ -19,6 +20,15 @@ struct ContentView: View {
                 OnboardingView(showOnboarding: $showOnboarding, showSignInView: $showSignInView)
             } else if !showSignInView {
                 TabbarView(showSignInView: $showSignInView)
+                    .onAppear {
+                        if !UserDefaults.standard.bool(forKey: "hasShownDisclaimer") {
+                            showAlert = true
+                            UserDefaults.standard.set(true, forKey: "hasShownDisclaimer")
+                        }
+                    }
+                    .alert(isPresented: $showAlert) {
+                        Alert(title: Text("Attention"), message: Text("This app is for demonstration purposes only. It is not intended for use in a clinical setting. You should not use this app to make any medical decisions. Please consult a healthcare professional for medical advice."), dismissButton: .default(Text("I understand")))
+                    }
             }
         }
         .onAppear {
