@@ -147,22 +147,21 @@ import SwiftUI
 
     // Resize image before converting to base64
     func sendImageForProcessing(image: UIImage) {
-        // Compress image to reduce its size (adjust compressionQuality as needed)
-        guard let imageData = image.jpegData(compressionQuality: 0.5) else {  // Adjust quality to reduce size
+        // Compress image to reduce its size
+        guard let imageData = image.jpegData(compressionQuality: 0.5) else {
             print("Error: Could not convert image to data")
             return
         }
         
         // Base64 encode the compressed image data
         let fileContent = imageData.base64EncodedString()
-        let postDataString = "data:image/jpeg;base64,\(fileContent)"
-        guard let postData = postDataString.data(using: .utf8) else {
+        guard let postData = fileContent.data(using: .utf8) else {
             print("Error: Could not convert base64 string to Data")
             return
         }
         
         // Ensure the URL is valid
-        guard let url = URL(string: "https://detect.roboflow.com/teeth-type-ilzel/3?api_key=BdwFsgGy46JSLH7hv0e6&name=YOUR_IMAGE.jpg") else {
+        guard let url = URL(string: "https://classify.roboflow.com/dai-4bmc3/1?api_key=BdwFsgGy46JSLH7hv0e6&name=YOUR_IMAGE.jpg") else {
             print("Error: Invalid URL")
             return
         }
@@ -170,15 +169,15 @@ import SwiftUI
         // Set up the request
         var request = URLRequest(url: url, timeoutInterval: Double.infinity)
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept") // Expecting JSON response
         request.httpMethod = "POST"
         request.httpBody = postData
         
         // Perform the network request
+        // Perform the network request
         URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             // Check for network error
             if let error = error {
-                print("Error: \(error)")
+                print("Error: \(error.localizedDescription)")
                 return
             }
             
@@ -188,49 +187,47 @@ import SwiftUI
                 return
             }
             
-            // Print raw response for debugging
+            // Debug: Print raw response
             print("Raw Response: \(String(data: data, encoding: .utf8) ?? "No Data")")
             
             // Try parsing the response as JSON
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                   let predictions = json["predictions"] as? [[String: Any]] {
+                   let predictions = json["predictions"] as? [String: [String: Any]] {
                     
-                    print(predictions)
+                    // Process predictions
+                    var predictionResults: [Prediction] = []
                     
-                    if predictions.isEmpty {
+                    for (condition, details) in predictions {
+                        if let confidenceValue = details["confidence"] as? Double {
+                            let newPrediction = Prediction(id: UUID(), prediction: condition, confidence: confidenceValue)
+                            predictionResults.append(newPrediction)
+                        }
+                    }
+                    
+                    // Sort predictions by confidence descending
+                    predictionResults.sort { $0.confidence > $1.confidence }
+                    
+                    if predictionResults.isEmpty {
                         DispatchQueue.main.async {
                             self?.scannerState = .idle
                             self?.presentError("No Condition Found")
                         }
                     } else {
-                        // Process each prediction
-                        for prediction in predictions {
-                            if let confidenceValue = prediction["confidence"] as? Double,
-                               let classValue = prediction["class"] as? String {
-                                let newPrediction = Prediction(id: UUID(), prediction: classValue, confidence: confidenceValue)
-                                
-                                // Update UI on the main thread
-                                DispatchQueue.main.async {
-                                    self?.addPrediction(prediction: newPrediction)
-                                    self?.scannerState = .loaded
-                                    self?.result = newPrediction
-                                }
-                            } else {
-                                print("Error: Missing confidence or class value in prediction")
-                            }
+                        DispatchQueue.main.async {
+                            self?.scannerState = .loaded
+                            self?.result = predictionResults.first
+                            predictionResults.forEach { self?.addPrediction(prediction: $0) }
                         }
                     }
                 } else {
                     print("Error: Could not parse JSON or predictions not found")
                 }
             } catch {
-                // Handle JSON parsing error
                 print("Error parsing JSON: \(error.localizedDescription)")
             }
-        }.resume() // Start the network task
+        }.resume()
     }
-
 }
 
 
